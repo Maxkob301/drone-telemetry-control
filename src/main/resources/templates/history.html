@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>История полётов</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+    <h1>📜 История полётов</h1>
+    <a href="/" class="btn btn-secondary mb-3">← На карту</a>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Широта</th>
+            <th>Долгота</th>
+            <th>Высота</th>
+            <th>Дата</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="record : ${records}">
+            <td th:text="${record.id}">1</td>
+            <td th:text="${record.latitude}">0.0</td>
+            <td th:text="${record.longitude}">0.0</td>
+            <td th:text="${record.altitude}">0.0</td>
+            <td th:text="${record.flightDate}">2026-01-01</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
